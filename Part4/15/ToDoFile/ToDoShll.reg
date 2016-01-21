@@ -1,0 +1,11 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\CLSID\{CDF05220-DB84-11D1-B9F1-004845400FAA}]
+@= "ToDoFile Context Menu"
+[HKEY_CLASSES_ROOT\CLSID\{CDF05220-DB84-11D1-B9F1-004845400FAA}\InProcServer32]
+@= "c:\\md4code\\Part 4\\17\\ToDoFile\\ToDoShll.dll"
+"ThreadingModel" = "Apartment"
+
+[HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\{CDF05220-DB84-11D1-B9F1-004845400FAA}]
+@= ""
+

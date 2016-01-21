@@ -1,0 +1,39 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = IfSender.exe ClassInfo.exe HideComp.exe ChangeOwner.exe Listdemo.exe \
+  Contain.exe DateList.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Listdemo.exe: LISTDEMO\Listdemo.dpr
+  $(DCC)
+
+IfSender.exe: IfSender\IfSender.dpr
+  $(DCC)
+
+ClassInfo.exe: ClassInfo\ClassInfo.dpr
+  $(DCC)
+
+HideComp.exe: HideComp\HideComp.dpr
+  $(DCC)
+
+ChangeOwner.exe: ChangeOwner\ChangeOwner.dpr
+  $(DCC)
+
+Contain.exe: Contain\Contain.dpr
+  $(DCC)
+
+DateList.exe: DateList\DateList.dpr
+  $(DCC)
+
+

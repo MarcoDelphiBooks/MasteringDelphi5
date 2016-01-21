@@ -1,0 +1,11 @@
+:Base HelpProj.hlp
+:Title HelpProj Help
+1 Getting Started
+2 Creating Files=FileNew
+1 What's New for 1.0
+2 Creating Files=FileNew
+1 Using the File Menu
+2 Creating Files=FileNew@HelpProj.HLP
+2 Opening Files=FileOpen@HelpProj.HLP
+2 Closing Files=FileClose
+2 Quitting the Application=FileExit

@@ -1,0 +1,51 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Callcpp.exe Dllmem.dll Usemem.exe Dynacall.exe Firstdll.dll \
+  Callfrst.exe Formdll.dll Usecol.exe FormdllP.dll UsecolP.exe PackInfo.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Callcpp.exe: CPPDLL\Callcpp.dpr
+  $(DCC)
+
+Dllmem.dll: DLLMEM\Dllmem.dpr
+  $(DCC)
+
+Usemem.exe: DLLMEM\Usemem.dpr
+  $(DCC)
+
+Dynacall.exe: DYNACALL\Dynacall.dpr
+  $(DCC)
+
+Firstdll.dll: FIRSTDLL\Firstdll.dpr
+  $(DCC)
+
+Callfrst.exe: FIRSTDLL\Callfrst.dpr
+  $(DCC)
+
+Formdll.dll: FORMDLL\Formdll.dpr
+  $(DCC)
+
+Usecol.exe: FORMDLL\Usecol.dpr
+  $(DCC)
+
+FormdllP.dll: FormDllP\FormdllP.dpr
+  $(DCC)
+
+UsecolP.exe: FormDllP\UsecolP.dpr
+  $(DCC)
+
+PackInfo.exe: PackInfo\PackInfo.dpr
+  $(DCC)
+
+

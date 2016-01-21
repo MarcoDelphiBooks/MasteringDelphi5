@@ -1,0 +1,47 @@
+package MdPack;
+
+{$R *.RES}
+{$R 'MdClock.dcr'}
+{$R 'MdListDial.dcr'}
+{$R 'MdArrow.dcr'}
+{$R 'MdNumEd.dcr'}
+{$R 'MdSounB.dcr'}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Mastering Delphi Package'}
+{$IMPLICITBUILD ON}
+
+requires
+  vcl50;
+
+contains
+  MdFontbox in 'MdFontbox.pas',
+  MdClock in 'MdClock.pas',
+  MdListDial in 'MdListDial.pas' {MdListBoxForm},
+  MdActiveBtn in 'MdActiveBtn.pas',
+  MdListAct in 'MdListAct.pas',
+  MdArrow in 'MdArrow.pas',
+  MdNumEd in 'MdNumEd.pas',
+  MdSounB in 'MdSounB.pas',
+  MdArrReg in 'MdArrReg.pas';
+
+end.

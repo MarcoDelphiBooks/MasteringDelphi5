@@ -1,0 +1,74 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Commdlg.exe Credits.exe DlgApply.exe DockPage.exe FramePag.exe \
+  FrameTab.exe Mbparade.exe Mdidemo.exe MdiMulti.exe More.exe MultiWin.exe \
+  Pages.exe Reflist2.exe Splash0.exe Splash1.exe Splash2.exe Tabonly.exe \
+  WizardUI.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Commdlg.exe: COMMDLG\Commdlg.dpr
+  $(DCC)
+
+Credits.exe: CREDITS\Credits.dpr
+  $(DCC)
+
+DlgApply.exe: DlgApply\DlgApply.dpr
+  $(DCC)
+
+DockPage.exe: DockPage\DockPage.dpr
+  $(DCC)
+
+FramePag.exe: FramePag\FramePag.dpr
+  $(DCC)
+
+FrameTab.exe: FrameTab\FrameTab.dpr
+  $(DCC)
+
+Mbparade.exe: MBPARADE\Mbparade.dpr
+  $(DCC)
+
+Mdidemo.exe: MdiDemo\Mdidemo.dpr
+  $(DCC)
+
+MdiMulti.exe: MdiMulti\MdiMulti.dpr
+  $(DCC)
+
+More.exe: MORE\More.dpr
+  $(DCC)
+
+MultiWin.exe: MultiWin\MultiWin.dpr
+  $(DCC)
+
+Pages.exe: PAGES\Pages.dpr
+  $(DCC)
+
+Reflist2.exe: RefList2\Reflist2.dpr
+  $(DCC)
+
+Splash0.exe: SPLASH0\Splash0.dpr
+  $(DCC)
+
+Splash1.exe: SPLASH1\Splash1.dpr
+  $(DCC)
+
+Splash2.exe: SPLASH2\Splash2.dpr
+  $(DCC)
+
+Tabonly.exe: TABONLY\Tabonly.dpr
+  $(DCC)
+
+WizardUI.exe: WizardUI\WizardUI.dpr
+  $(DCC)
+
+

@@ -1,0 +1,58 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = PackAuto.bpl MdXArr.bpl DBOffice.exe ListCli.exe ListServ.exe \
+  Olecont.exe Tlibcli.exe TLibComp.exe Tlibdemo.exe WebDemo.exe WordCont.exe \
+  XArrow.ocx XClockLib.ocx
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+DBOffice.exe: DBOffice\DBOffice.dpr
+  $(DCC)
+
+ListCli.exe: ListCli\ListCli.dpr
+  $(DCC)
+
+ListServ.exe: ListServ\ListServ.dpr
+  $(DCC)
+
+Olecont.exe: OleCont\Olecont.dpr
+  $(DCC)
+
+Tlibcli.exe: TLIBCLI\Tlibcli.dpr
+  $(DCC)
+
+TLibComp.exe: TLibComp\TLibComp.dpr
+  $(DCC)
+
+Tlibdemo.exe: TLIBDEMO\Tlibdemo.dpr
+  $(DCC)
+
+WebDemo.exe: WebBrows\WebDemo.dpr
+  $(DCC)
+
+WordCont.exe: WordCont\WordCont.dpr
+  $(DCC)
+
+XArrow.ocx: XArrow\XArrow.dpr
+  $(DCC)
+
+XClockLib.ocx: XClock\XClockLib.dpr
+  $(DCC)
+
+PackAuto.bpl: TLIBDEMO\PackAuto.dpk
+  $(DCC)
+
+MdXArr.bpl: ArrPack\MdXArr.dpk
+  $(DCC)
+
+

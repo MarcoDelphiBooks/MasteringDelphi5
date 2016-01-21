@@ -1,0 +1,55 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = ActivApp.exe Bicons.exe Borders.exe CreatOrd.exe Kpreview.exe \
+  MouseOne.exe NoTitle.exe Scale.exe Screen.exe Showapp.exe Screen2.exe \
+  Sysmenu2.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+ActivApp.exe: ActivApp\ActivApp.dpr
+  $(DCC)
+
+Bicons.exe: BICONS\Bicons.dpr
+  $(DCC)
+
+Borders.exe: BORDERS\Borders.dpr
+  $(DCC)
+
+CreatOrd.exe: CreatOrd\CreatOrd.dpr
+  $(DCC)
+
+Kpreview.exe: KPreview\Kpreview.dpr
+  $(DCC)
+
+MouseOne.exe: MouseOne\MouseOne.dpr
+  $(DCC)
+
+NoTitle.exe: NoTitle\NoTitle.dpr
+  $(DCC)
+
+Scale.exe: SCALE\Scale.dpr
+  $(DCC)
+
+Screen.exe: SCREEN\Screen.dpr
+  $(DCC)
+
+Showapp.exe: ShowApp\Showapp.dpr
+  $(DCC)
+
+Screen2.exe: Screen2\Screen2.dpr
+  $(DCC)
+
+Sysmenu2.exe: SYSMENU2\Sysmenu2.dpr
+  $(DCC)
+
+

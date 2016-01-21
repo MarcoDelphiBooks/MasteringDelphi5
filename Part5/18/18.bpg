@@ -1,0 +1,32 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Assert.exe BreakP.exe Msgflow.exe OdsDemo.exe VclMem.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Assert.exe: ASSERT\Assert.dpr
+  $(DCC)
+
+BreakP.exe: BREAKP\BreakP.dpr
+  $(DCC)
+
+Msgflow.exe: MSGFLOW\Msgflow.dpr
+  $(DCC)
+
+OdsDemo.exe: OdsDemo\OdsDemo.dpr
+  $(DCC)
+
+VclMem.exe: VclMem\VclMem.dpr
+  $(DCC)
+
+

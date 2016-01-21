@@ -1,0 +1,51 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = AdtDemo.exe AfRemote.ocx AppServ1.exe AppServ2.exe AppSPlus.exe \
+  CdsCalcs.exe IeFirst.exe IeMd.exe ThinCli1.exe ThinCli2.exe ThinPlus.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+AdtDemo.exe: AdtDemo\AdtDemo.dpr
+  $(DCC)
+
+AfRemote.ocx: AfRemote\AfRemote.dpr
+  $(DCC)
+
+AppServ1.exe: AppServ1\AppServ1.dpr
+  $(DCC)
+
+AppServ2.exe: AppServ2\AppServ2.dpr
+  $(DCC)
+
+AppSPlus.exe: AppSPlus\AppSPlus.dpr
+  $(DCC)
+
+CdsCalcs.exe: CdsCalcs\CdsCalcs.dpr
+  $(DCC)
+
+IeFirst.exe: IeFirst\IeFirst.dpr
+  $(DCC)
+
+IeMd.exe: IeMd\IeMd.dpr
+  $(DCC)
+
+ThinCli1.exe: ThinCli1\ThinCli1.dpr
+  $(DCC)
+
+ThinCli2.exe: ThinCli2\ThinCli2.dpr
+  $(DCC)
+
+ThinPlus.exe: ThinPlus\ThinPlus.dpr
+  $(DCC)
+
+

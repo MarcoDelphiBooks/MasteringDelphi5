@@ -1,0 +1,51 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Actions.exe DragList.exe DragTree.exe DynaMenu.exe InFocus.exe \
+  MenuImg.exe Newcheck.exe Odlist.exe Odmenu.exe Reflist.exe Sysmenu.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Actions.exe: Actions\Actions.dpr
+  $(DCC)
+
+DragList.exe: DragList\DragList.dpr
+  $(DCC)
+
+DragTree.exe: DragTree\DragTree.dpr
+  $(DCC)
+
+DynaMenu.exe: DynaMenu\DynaMenu.dpr
+  $(DCC)
+
+InFocus.exe: InFocus\InFocus.dpr
+  $(DCC)
+
+MenuImg.exe: MenuImg\MenuImg.dpr
+  $(DCC)
+
+Newcheck.exe: NewCheck\Newcheck.dpr
+  $(DCC)
+
+Odlist.exe: OdList\Odlist.dpr
+  $(DCC)
+
+Odmenu.exe: OdMenu\Odmenu.dpr
+  $(DCC)
+
+Reflist.exe: RefList\Reflist.dpr
+  $(DCC)
+
+Sysmenu.exe: SYSMENU\Sysmenu.dpr
+  $(DCC)
+
+

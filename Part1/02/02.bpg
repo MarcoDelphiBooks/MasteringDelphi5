@@ -1,0 +1,42 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Viewdate.exe Viewd2.exe Animals1.exe Createc.exe Animals2.exe \
+  Reintr.exe Vfi.exe Animals3.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Animals1.exe: ANIMALS1\Animals1.dpr
+  $(DCC)
+
+Createc.exe: CREATEC\Createc.dpr
+  $(DCC)
+
+Reintr.exe: Reintr\Reintr.dpr
+  $(DCC)
+
+Vfi.exe: VFI\Vfi.dpr
+  $(DCC)
+
+Viewdate.exe: VIEWDATE\Viewdate.dpr
+  $(DCC)
+
+Viewd2.exe: VIEWD2\Viewd2.dpr
+  $(DCC)
+
+Animals2.exe: ANIMALS2\Animals2.dpr
+  $(DCC)
+
+Animals3.exe: ANIMALS3\Animals3.dpr
+  $(DCC)
+
+

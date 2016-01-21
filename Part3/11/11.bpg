@@ -1,0 +1,45 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = DdlSample.exe GetMax.exe Ibemp.exe sqlbuilder.exe transample.exe \
+  upsqldemo.exe Ibemp2.exe IbxMon.exe UpdSql2.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+DdlSample.exe: DdlSample\DdlSample.dpr
+  $(DCC)
+
+GetMax.exe: GetMax\GetMax.dpr
+  $(DCC)
+
+Ibemp.exe: IBEMP\Ibemp.dpr
+  $(DCC)
+
+sqlbuilder.exe: SqlBuilder\sqlbuilder.dpr
+  $(DCC)
+
+transample.exe: TranSample\transample.dpr
+  $(DCC)
+
+upsqldemo.exe: UpdateSql\upsqldemo.dpr
+  $(DCC)
+
+Ibemp2.exe: IbEmp2\Ibemp2.dpr
+  $(DCC)
+
+IbxMon.exe: IbxMon\IbxMon.dpr
+  $(DCC)
+
+UpdSql2.exe: UpdSql2\UpdSql2.dpr
+  $(DCC)
+
+

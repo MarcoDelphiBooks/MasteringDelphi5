@@ -1,0 +1,67 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Calc.exe ChartDb.exe DbDates.exe DbEvts.exe EditDemo.exe \
+  Fieldacc.exe FldText.exe GridDemo.exe Multi1.exe Multi2.exe NonAware.exe \
+  Search.exe SendToDb.exe Tables.exe Total.exe DbAware.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Calc.exe: CALC\Calc.dpr
+  $(DCC)
+
+ChartDb.exe: ChartDb\ChartDb.dpr
+  $(DCC)
+
+DbDates.exe: DbDates\DbDates.dpr
+  $(DCC)
+
+DbEvts.exe: DbEvts\DbEvts.dpr
+  $(DCC)
+
+EditDemo.exe: EditDemo\EditDemo.dpr
+  $(DCC)
+
+Fieldacc.exe: FIELDACC\Fieldacc.dpr
+  $(DCC)
+
+FldText.exe: FldText\FldText.dpr
+  $(DCC)
+
+GridDemo.exe: GridDemo\GridDemo.dpr
+  $(DCC)
+
+Multi1.exe: MULTI1\Multi1.dpr
+  $(DCC)
+
+Multi2.exe: MULTI2\Multi2.dpr
+  $(DCC)
+
+NonAware.exe: NonAware\NonAware.dpr
+  $(DCC)
+
+Search.exe: SEARCH\Search.dpr
+  $(DCC)
+
+SendToDb.exe: SendToDb\SendToDb.dpr
+  $(DCC)
+
+Tables.exe: Tables\Tables.dpr
+  $(DCC)
+
+Total.exe: TOTAL\Total.dpr
+  $(DCC)
+
+DbAware.exe: DbAware\DbAware.dpr
+  $(DCC)
+
+

@@ -1,0 +1,55 @@
+# ---------------------------------------------------------------------------
+PRONTO = $(TP)
+PROJECT = Cppdll
+OBJFILES = cppdll.obj
+RESFILES = 
+RESDEPEN = $(RESFILES)
+LIBFILES = 
+# ---------------------------------------------------------------------------
+CFLAG1 = -O2 -Hc -k -r -vi -c -a4 -b- -w-par -w-ucp -w-inl -w-hid -Vx -Ve -x\
+    -WE 
+CFLAG2 = -I$(PRONTO)\include;$(PRONTO)\include\vcl -H=$(PRONTO)\lib\vcl.csm 
+PFLAGS = -U$(PRONTO)\lib\obj -jphnv -m -AWinTypes=Windows;WinProcs=Windows\
+    -ADbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE
+LFLAGS = -L$(PRONTO)\lib -aa -Tpd -x -V4.0 -j$(PRONTO)\lib\obj;$(PRONTO)\lib 
+IFLAGS = -i -g 
+# ---------------------------------------------------------------------------
+ALLOBJ = c0d32.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) vcl.lib ole2w32.lib oc30.lib mpr.lib user32.lib\
+    import32.lib cp32mt.lib 
+# ---------------------------------------------------------------------------
+.autodepend
+
+$(PROJECT).exe: $(OBJFILES) $(RESDEPEN)
+    $(PRONTO)\BIN\tlink32 @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT).exe,, +
+    $(ALLLIB),, +
+    $(ALLRES) 
+!
+
+.pas.hpp:
+    $(PRONTO)\BIN\dcc32 $(PFLAGS) { $** }
+
+.pas.obj:
+    $(PRONTO)\BIN\dcc32 $(PFLAGS) { $** }
+
+.cpp.obj:
+    $(PRONTO)\BIN\bcc32 @&&!
+    $(CFLAG1) 
+    $(CFLAG2) 
+    -o$* $* 
+!
+
+.c.obj:
+    $(PRONTO)\BIN\bcc32 @&&!
+    $(CFLAG1) 
+    $(CFLAG2) 
+    -o$* $**
+!
+
+.rc.res:
+    $(PRONTO)\BIN\brcc32 $<
+#-----------------------------------------------------------------------------

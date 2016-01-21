@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = AdoEmpl.exe AdoMd.exe AdoPrimer.exe AdoSort.exe Bde2Ado.exe \
+  DbAware2.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+AdoEmpl.exe: AdoEmpl\AdoEmpl.dpr
+  $(DCC)
+
+AdoMd.exe: AdoMd\AdoMd.dpr
+  $(DCC)
+
+AdoPrimer.exe: AdoPrimer\AdoPrimer.dpr
+  $(DCC)
+
+AdoSort.exe: AdoSort\AdoSort.dpr
+  $(DCC)
+
+Bde2Ado.exe: Bde2Ado\Bde2Ado.dpr
+  $(DCC)
+
+DbAware2.exe: DbAware2\DbAware2.dpr
+  $(DCC)
+
+

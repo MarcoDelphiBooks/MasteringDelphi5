@@ -1,0 +1,67 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = CacheUpd.exe CallBack.exe CheckDbg.exe Dberror.exe DbPack.exe \
+  DrawData.exe DynQuery.exe LockTest.exe Mastdet.exe Mastdet2.exe MdiView.exe \
+  mltgrid.exe Orders.exe ParQuery.exe Transact.exe Twoviews.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Twoviews.exe: TWOVIEWS\Twoviews.dpr
+  $(DCC)
+
+CacheUpd.exe: CacheUpd\CacheUpd.dpr
+  $(DCC)
+
+CallBack.exe: CallBack\CallBack.dpr
+  $(DCC)
+
+CheckDbg.exe: CheckDbg\CheckDbg.dpr
+  $(DCC)
+
+Dberror.exe: DbError\Dberror.dpr
+  $(DCC)
+
+DbPack.exe: DbPack\DbPack.dpr
+  $(DCC)
+
+DrawData.exe: DrawData\DrawData.dpr
+  $(DCC)
+
+DynQuery.exe: DynQuery\DynQuery.dpr
+  $(DCC)
+
+LockTest.exe: LockTest\LockTest.dpr
+  $(DCC)
+
+Mastdet.exe: MASTDET\Mastdet.dpr
+  $(DCC)
+
+Mastdet2.exe: MASTDET2\Mastdet2.dpr
+  $(DCC)
+
+MdiView.exe: MdiView\MdiView.dpr
+  $(DCC)
+
+mltgrid.exe: MltGrid\mltgrid.dpr
+  $(DCC)
+
+Orders.exe: ORDERS\Orders.dpr
+  $(DCC)
+
+ParQuery.exe: ParQuery\ParQuery.dpr
+  $(DCC)
+
+Transact.exe: TRANSACT\Transact.dpr
+  $(DCC)
+
+

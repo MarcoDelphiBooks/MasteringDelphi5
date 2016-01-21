@@ -1,0 +1,39 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Onecopy.exe Thlock.exe Thold.exe Thprior.exe Thsynch.exe Thwait.exe \
+  ThreadDB.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Onecopy.exe: OneCopy\Onecopy.dpr
+  $(DCC)
+
+Thlock.exe: THLOCK\Thlock.dpr
+  $(DCC)
+
+Thold.exe: THOLD\Thold.dpr
+  $(DCC)
+
+Thprior.exe: THPRIOR\Thprior.dpr
+  $(DCC)
+
+Thsynch.exe: THSYNCH\Thsynch.dpr
+  $(DCC)
+
+Thwait.exe: THWAIT\Thwait.dpr
+  $(DCC)
+
+ThreadDB.exe: ThreadDB\ThreadDB.dpr
+  $(DCC)
+
+

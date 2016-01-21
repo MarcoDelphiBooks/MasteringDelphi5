@@ -1,0 +1,76 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = AnimBtn.exe Animctrl.exe BmpDraw.exe Fire.exe Fire2.exe Fontgrid.exe \
+  Graph1.exe Graph2.exe Imagev.exe Imagev2.exe Mines.exe ShapeBmp.exe Shapes.exe \
+  ShapesPr.exe SideText.exe WebChart.dll WmfDemo.exe World.exe World2.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+AnimBtn.exe: AnimBtn\AnimBtn.dpr
+  $(DCC)
+
+Animctrl.exe: AnimCtrl\Animctrl.dpr
+  $(DCC)
+
+BmpDraw.exe: BmpDraw\BmpDraw.dpr
+  $(DCC)
+
+Fire.exe: FIRE\Fire.dpr
+  $(DCC)
+
+Fire2.exe: FIRE2\Fire2.dpr
+  $(DCC)
+
+Fontgrid.exe: FONTGRID\Fontgrid.dpr
+  $(DCC)
+
+Graph1.exe: GRAPH1\Graph1.dpr
+  $(DCC)
+
+Graph2.exe: GRAPH2\Graph2.dpr
+  $(DCC)
+
+Imagev.exe: IMAGEV\Imagev.dpr
+  $(DCC)
+
+Imagev2.exe: IMAGEV2\Imagev2.dpr
+  $(DCC)
+
+Mines.exe: MINES\Mines.dpr
+  $(DCC)
+
+ShapeBmp.exe: ShapeBmp\ShapeBmp.dpr
+  $(DCC)
+
+Shapes.exe: Shapes\Shapes.dpr
+  $(DCC)
+
+ShapesPr.exe: ShapesPr\ShapesPr.dpr
+  $(DCC)
+
+SideText.exe: SideText\SideText.dpr
+  $(DCC)
+
+WebChart.dll: WebChart\WebChart.dpr
+  $(DCC)
+
+WmfDemo.exe: WmfDemo\WmfDemo.dpr
+  $(DCC)
+
+World.exe: WORLD\World.dpr
+  $(DCC)
+
+World2.exe: WORLD2\World2.dpr
+  $(DCC)
+
+

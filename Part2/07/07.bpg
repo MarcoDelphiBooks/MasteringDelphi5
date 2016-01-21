@@ -1,0 +1,64 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Anchors.exe Coolbar.exe CustHint.exe HdrSlipt.exe MdEdit1.exe \
+  MdEdit2.exe MdEdit3.exe MdEdit4.exe MdEdit5.exe MdEdit6.exe Scroll1.exe \
+  Scroll2.exe Split1.exe Split2.exe Splith.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Anchors.exe: Anchors\Anchors.dpr
+  $(DCC)
+
+Coolbar.exe: CoolDemo\Coolbar.dpr
+  $(DCC)
+
+CustHint.exe: CustHint\CustHint.dpr
+  $(DCC)
+
+HdrSlipt.exe: HdrSplit\HdrSlipt.dpr
+  $(DCC)
+
+MdEdit1.exe: MdEdit1\MdEdit1.dpr
+  $(DCC)
+
+MdEdit2.exe: MdEdit2\MdEdit2.dpr
+  $(DCC)
+
+MdEdit3.exe: MdEdit3\MdEdit3.dpr
+  $(DCC)
+
+MdEdit4.exe: MdEdit4\MdEdit4.dpr
+  $(DCC)
+
+MdEdit5.exe: MdEdit5\MdEdit5.dpr
+  $(DCC)
+
+MdEdit6.exe: MdEdit6\MdEdit6.dpr
+  $(DCC)
+
+Scroll1.exe: SCROLL1\Scroll1.dpr
+  $(DCC)
+
+Scroll2.exe: SCROLL2\Scroll2.dpr
+  $(DCC)
+
+Split1.exe: SPLIT1\Split1.dpr
+  $(DCC)
+
+Split2.exe: Split2\Split2.dpr
+  $(DCC)
+
+Splith.exe: SplitH\Splith.dpr
+  $(DCC)
+
+

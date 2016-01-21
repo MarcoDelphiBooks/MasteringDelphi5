@@ -1,0 +1,42 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Mdpack.bpl MdDesPk.bpl ActiveB.exe ArrowDemo.exe FontBoxDemo.exe \
+  ListDialDemo.exe ListTest.exe SoundB.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+ActiveB.exe: ActiveB\ActiveB.dpr
+  $(DCC)
+
+ArrowDemo.exe: ArrowDemo\ArrowDemo.dpr
+  $(DCC)
+
+FontBoxDemo.exe: FontBoxDemo\FontBoxDemo.dpr
+  $(DCC)
+
+ListDialDemo.exe: ListDialDemo\ListDialDemo.dpr
+  $(DCC)
+
+ListTest.exe: ListTest\ListTest.dpr
+  $(DCC)
+
+SoundB.exe: SoundB\SoundB.dpr
+  $(DCC)
+
+Mdpack.bpl: Mdpack\Mdpack.dpk
+  $(DCC)
+
+MdDesPk.bpl: MdDespk\MdDesPk.dpk
+  $(DCC)
+
+

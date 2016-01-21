@@ -1,0 +1,80 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = BrokIsa.dll BrokCgi.exe CgiDate.exe CustQueP.dll HtmlProd.exe \
+  IsapiDem.dll MailGen.exe Client1.exe Server1.exe Client2.exe Server2.exe \
+  ClientDb.exe ServerDb.exe WebCount.exe WebFind.exe WebMail2.exe GetMail.exe \
+  Xform1.ocx XFUser.ocx XWebWiz.ocx
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+BrokIsa.dll: BrokDemo\BrokIsa.dpr
+  $(DCC)
+
+CgiDate.exe: CgiDate\CgiDate.dpr
+  $(DCC)
+
+CustQueP.dll: CustQueP\CustQueP.dpr
+  $(DCC)
+
+HtmlProd.exe: HtmlProd\HtmlProd.dpr
+  $(DCC)
+
+IsapiDem.dll: IsapiDem\IsapiDem.dpr
+  $(DCC)
+
+MailGen.exe: MailGen\MailGen.dpr
+  $(DCC)
+
+Client1.exe: Sock1\Client1.dpr
+  $(DCC)
+
+Server1.exe: Sock1\Server1.dpr
+  $(DCC)
+
+Client2.exe: Sock2\Client2.dpr
+  $(DCC)
+
+Server2.exe: Sock2\Server2.dpr
+  $(DCC)
+
+ClientDb.exe: SockDb\ClientDb.dpr
+  $(DCC)
+
+ServerDb.exe: SockDb\ServerDb.dpr
+  $(DCC)
+
+WebCount.exe: WebCount\WebCount.dpr
+  $(DCC)
+
+WebFind.exe: WebFind\WebFind.dpr
+  $(DCC)
+
+WebMail2.exe: WebMail\WebMail2.dpr
+  $(DCC)
+
+GetMail.exe: WebMail\GetMail.dpr
+  $(DCC)
+
+Xform1.ocx: XFORM1\Xform1.dpr
+  $(DCC)
+
+XFUser.ocx: XFUSER\XFUser.dpr
+  $(DCC)
+
+XWebWiz.ocx: XWebWiz\XWebWiz.dpr
+  $(DCC)
+
+BrokCgi.exe: BrokDemo\BrokCgi.dpr
+  $(DCC)
+
+

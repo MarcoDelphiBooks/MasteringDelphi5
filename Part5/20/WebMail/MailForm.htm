@@ -1,0 +1,43 @@
+<HTML><HEAD>
+  <TITLE>Subscription</TITLE>
+</HEAD>
+
+<BODY  bgcolor="#FFFFFF">
+<H1>Subscription Module</H1>
+
+Fill the following form to subscribe to my newsletter.
+
+<form
+name="subscribe"
+action="/cgi-bin/WebMail2.exe/new"
+method="post"
+onSubmit="
+  if(!subscribe.lastname.value ||
+    !subscribe.firstname.value ||
+    !subscribe.email.value)
+  {
+    alert('All fields must be filled');
+      return false;
+  };">
+<TABLE>
+<TR>
+  <TD><B>First Name:</B></TD>
+  <TD><input name="firstname">
+</TD>
+</TR>
+<TR>
+  <TD><B>Last Name:</B></TD>
+  <TD><input name="lastname"></TD>
+</TR>
+<TR>
+  <TD><B>Email:</B></TD>
+  <TD><input name="email"></TD>
+</TR>
+<TR>
+  <TD></TD>
+  <TD><input type=submit value="Send"></TD>
+</TR>
+</TABLE>
+</form>
+
+</BODY></HTML>

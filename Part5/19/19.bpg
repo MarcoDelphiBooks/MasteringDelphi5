@@ -1,0 +1,48 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Icons.exe Icons.ita MemIcon.exe Vinfo.exe Printbmp.exe Navig.exe \
+  Dirs.exe Clipbmp.exe Registr.exe Regview.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Icons.exe: ICONS\Icons.dpr
+  $(DCC)
+
+MemIcon.exe: MemIcon\MemIcon.dpr
+  $(DCC)
+
+Vinfo.exe: VINFO\Vinfo.dpr
+  $(DCC)
+
+Icons.ita: ICONS\ita\Icons.dpr
+  $(DCC)
+
+Printbmp.exe: PRINTBMP\Printbmp.dpr
+  $(DCC)
+
+Navig.exe: QRNAV\Navig.dpr
+  $(DCC)
+
+Dirs.exe: DIRS\Dirs.dpr
+  $(DCC)
+
+Clipbmp.exe: CLIPBMP\Clipbmp.dpr
+  $(DCC)
+
+Registr.exe: REGISTR\Registr.dpr
+  $(DCC)
+
+Regview.exe: REGVIEW\Regview.dpr
+  $(DCC)
+
+

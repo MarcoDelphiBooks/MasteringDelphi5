@@ -1,0 +1,61 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = Classref.exe Countob2.exe Countobj.exe Datecomp.exe Dateevt.exe \
+  Dateprop.exe Excep.exe Excep2.exe Excep3.exe IntfDemo.exe MultInh.exe \
+  CountOld.exe ObjClone.exe ErrorLog.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+Classref.exe: CLASSREF\Classref.dpr
+  $(DCC)
+
+Countob2.exe: COUNTOB2\Countob2.dpr
+  $(DCC)
+
+Countobj.exe: COUNTOBJ\Countobj.dpr
+  $(DCC)
+
+Datecomp.exe: DATECOMP\Datecomp.dpr
+  $(DCC)
+
+Dateevt.exe: DATEEVT\Dateevt.dpr
+  $(DCC)
+
+Dateprop.exe: DATEPROP\Dateprop.dpr
+  $(DCC)
+
+Excep.exe: EXCEPT\Excep.dpr
+  $(DCC)
+
+Excep2.exe: EXCEPT2\Excep2.dpr
+  $(DCC)
+
+Excep3.exe: EXCEPT3\Excep3.dpr
+  $(DCC)
+
+IntfDemo.exe: IntfDemo\IntfDemo.dpr
+  $(DCC)
+
+MultInh.exe: MultInh\MultInh.dpr
+  $(DCC)
+
+CountOld.exe: CountOld\CountOld.dpr
+  $(DCC)
+
+ObjClone.exe: ObjClone\ObjClone.dpr
+  $(DCC)
+
+ErrorLog.exe: ErrorLog\ErrorLog.dpr
+  $(DCC)
+
+
